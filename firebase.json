@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "EWCDCPHOTOS",
+    "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
