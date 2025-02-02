@@ -1,32 +1,40 @@
-name: Deploy to Firebase Hosting
+name: Deploy to Firebase Hosting on merge
 
 on:
   push:
     branches:
-      - main  # Or the branch you want to trigger the deploy from
+      - main  # Trigger deployment on push to the 'main' branch
 
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
+      # Checkout the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # Or whichever version you're using
-
-      - name: Install dependencies
-        run: npm install
-
+      # Deploy to Firebase Hosting
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}  # Use the secret containing the Firebase service account JSON
+          # GitHub token for authentication
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+
+          # Firebase service account for authentication (Add this secret in your GitHub repository settings)
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EWC_DC_PHOTOS }}
+
+          # Using the Firebase API Key (Add this secret in your GitHub repository settings)
+          apiKey: ${{ secrets.FIREBASE_API_KEY }}  # Use apiKey here
+
+          # Channel ID (optional, defaults to 'live' for production)
           channelId: live
+
+          # Firebase Project ID
           projectId: ewc-dc-photos
-          expires: 7d
-          entryPoint: .
+
+          # Entry point (typically where your build output is located)
+          entryPoint: . 
+
+          # Firebase CLI tools version
           firebaseToolsVersion: latest
