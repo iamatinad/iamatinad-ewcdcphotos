@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "EwcDcPhotos",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

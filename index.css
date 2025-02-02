@@ -1,0 +1,62 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Use a nice font (Google Fonts) */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7; /* Light background color */
+    color: #333; /* Text color */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Main container styling */
+.container {
+    background-color: #ffffff; /* White background for the main area */
+    padding: 40px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 400px; /* Limiting the width */
+    width: 100%;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green for a professional, friendly feel */
+}
+
+/* Button Styling for Google Sign-In */
+button {
+    background-color: #4285F4; /* Google Blue */
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+    width: 100%; /* Button takes up full width */
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #3367D6; /* Darker shade of blue when hovered */
+}
+
+/* Optional: Add small footer or extra info */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777; /* Lighter color for footer text */
+}
